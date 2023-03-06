@@ -8,14 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Vita
 {
-    public struct Person
+    public class transport
     {
         public String name;
-        public String lastName;
-        public int age;
+        public String firma;
+        public String dateOUT;
+    }
+    public class auto : transport
+    {
+
+        
+    }
+    public class low_auto : transport
+    {
+
+        
+    }
+    public class track: transport
+    {
+
+        
     }
 
     public partial class Form1 : Form
@@ -27,7 +43,7 @@ namespace Vita
 
         String name_tmp;
         String lastName_tmp;
-        DataBase dataBase;
+        DataBase dataBase = new DataBase();
 
         public Form1()
         {
@@ -41,6 +57,9 @@ namespace Vita
             lastName_tmp= boxLastName.Text;
 
             Corrent_user.Text = name_tmp +"||"+lastName_tmp;
+            
+
+
         }
 
         private void show_Person()
